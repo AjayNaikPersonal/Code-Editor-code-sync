@@ -8,9 +8,9 @@ const ACTIONS = require('./backendActions.cjs');
 const server = http.createServer(app);
 const io = new Server(server);
 
-app.use(express.static('build'));
+app.use(express.static('dist'));
 app.use((req, res, next) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 const userSocketMap = {};
